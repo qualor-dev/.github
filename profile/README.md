@@ -1,10 +1,8 @@
 # Qualor
 
-**Quality gates for new code. No lines-of-code licence.**
+**SAST and AI code review. One server. Your model.**
 
-Qualor is an open-source, self-hosted SonarQube alternative for GitLab and GitHub. It runs the
-analyzers you already trust, tracks issues across commits and fails the merge request that makes
-the code worse.
+Static analysis and AI code review in one self-hosted server: quality gates on new code, and an AI reviewer for GitLab and GitHub merge requests on your own model. Free, with no lines-of-code licence.
 
 [Website](https://qualor.dev) · [Documentation](https://qualor.dev/docs) ·
 [Live demo](https://review.qualor.dev)
@@ -27,8 +25,10 @@ Run the server with Docker in a few minutes: [quick start](https://qualor.dev/do
 
 ## What you get
 
-- **Quality gates on new code** for every merge request and pull request, with comments and
-  annotations on the changed lines.
+- **AI code review on your own model**: threads, one-click suggestions and answers to replies on
+  GitLab and GitHub.
+- **Quality gates on new code** for every merge request and pull request, with review comments on
+  the changed lines.
 - **Security analysis** with Qualor's own taint rules for JavaScript, TypeScript, Python, Java, Go
   and C#, plus secrets, vulnerable dependencies and licence policy.
 - **Your AI agent fixes what Qualor finds**: connect Claude Code, Cursor or any MCP client with one
