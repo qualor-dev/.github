@@ -15,7 +15,7 @@ Static analysis and AI code review in one self-hosted server: quality gates on n
     fetch-depth: 0
     persist-credentials: false
     ref: ${{ github.event.pull_request.head.sha || github.sha }}
-- uses: qualor-dev/scan-action@v0.12
+- uses: qualor-dev/scan-action@v0.13
   with:
     server-url: ${{ vars.QUALOR_URL }}
     token: ${{ secrets.QUALOR_TOKEN }}
