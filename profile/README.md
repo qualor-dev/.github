@@ -15,7 +15,7 @@ Static analysis and AI code review in one self-hosted server: quality gates on n
     fetch-depth: 0
     persist-credentials: false
     ref: ${{ github.event.pull_request.head.sha || github.sha }}
-- uses: qualor-dev/scan-action@v0.13
+- uses: qualor-dev/scan-action@v0.14
   with:
     server-url: ${{ vars.QUALOR_URL }}
     token: ${{ secrets.QUALOR_TOKEN }}
@@ -34,6 +34,8 @@ Run the server with Docker in a few minutes: [quick start](https://qualor.dev/do
 - **Your AI agent fixes what Qualor finds**: connect Claude Code, Cursor or any MCP client with one
   URL.
 - **Slack and Microsoft Teams** notifications and a weekly security digest.
+- **Set up in minutes**: pick your GitHub or GitLab repositories, and Qualor opens the pull request
+  that adds the scan to CI.
 - **Migrate from SonarQube** in one command.
 
 ## Repositories
