@@ -15,7 +15,7 @@ Code quality, AI code review and dependency vulnerability tracking in one self-h
     fetch-depth: 0
     persist-credentials: false
     ref: ${{ github.event.pull_request.head.sha || github.sha }}
-- uses: qualor-dev/scan-action@v0.15
+- uses: qualor-dev/scan-action@v0.16
   with:
     server-url: ${{ vars.QUALOR_URL }}
     token: ${{ secrets.QUALOR_TOKEN }}
@@ -30,10 +30,16 @@ Run the server with Docker in a few minutes: [quick start](https://qualor.dev/do
 - **Dependency vulnerabilities in the releases you ship**: your main branch and released versions
   are re-checked against fresh vulnerability data with no new scan, and your team triages each
   vulnerability once, with VEX reasons.
+- **Fix merge requests**: on a click, or by themselves for new vulnerabilities, Qualor opens the
+  merge request that bumps a vulnerable dependency, lockfile included. You review and merge.
+- **SBOM upload and where used**: track container images and software you do not build, and find
+  every project, branch and version that uses a package.
+- **Jira**: code issues and vulnerabilities become Jira issues, with the Jira status beside each
+  finding.
 - **Quality gates on new code** for every merge request and pull request, with review comments on
   the changed lines.
 - **Security analysis** with Qualor's own taint rules for JavaScript, TypeScript, Python, Java, Go
-  and C#, plus secrets, vulnerable dependencies and licence policy.
+  and C#, plus secrets, infrastructure as code, vulnerable dependencies and licence policy.
 - **Your AI agent fixes what Qualor finds**: connect Claude Code, Cursor or any MCP client with one
   URL.
 - **Slack and Microsoft Teams** notifications and a weekly security digest.
