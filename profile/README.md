@@ -2,7 +2,7 @@
 
 **Three tools. One server.**
 
-Code quality, AI code review and dependency vulnerability tracking in one self-hosted server: quality gates on new code, an AI reviewer for GitLab and GitHub merge requests on your own model, and new vulnerabilities flagged in the releases you already shipped. Free, with no lines-of-code licence.
+Code quality, AI code review and dependency vulnerability tracking in one self-hosted server: quality gates on new code, an AI reviewer on your own model for merge and pull requests on GitLab, GitHub and Azure DevOps, and new vulnerabilities flagged in the releases you already shipped. Free, with no lines-of-code licence.
 
 [Website](https://qualor.dev) · [Documentation](https://qualor.dev/docs) ·
 [Live demo](https://review.qualor.dev)
@@ -15,7 +15,7 @@ Code quality, AI code review and dependency vulnerability tracking in one self-h
     fetch-depth: 0
     persist-credentials: false
     ref: ${{ github.event.pull_request.head.sha || github.sha }}
-- uses: qualor-dev/scan-action@v0.16
+- uses: qualor-dev/scan-action@v0.17
   with:
     server-url: ${{ vars.QUALOR_URL }}
     token: ${{ secrets.QUALOR_TOKEN }}
@@ -25,8 +25,9 @@ Run the server with Docker in a few minutes: [quick start](https://qualor.dev/do
 
 ## What you get
 
-- **AI code review on your own model**: threads, one-click suggestions and answers to replies on
-  GitLab and GitHub.
+- **GitLab, GitHub and Azure DevOps**, cloud or self-hosted: review comments, AI review and fix
+  pull requests on each.
+- **AI code review on your own model**: threads, one-click suggestions and answers to replies.
 - **Dependency vulnerabilities in the releases you ship**: your main branch and released versions
   are re-checked against fresh vulnerability data with no new scan, and your team triages each
   vulnerability once, with VEX reasons.
@@ -34,8 +35,8 @@ Run the server with Docker in a few minutes: [quick start](https://qualor.dev/do
   merge request that bumps a vulnerable dependency, lockfile included. You review and merge.
 - **SBOM upload and where used**: track container images and software you do not build, and find
   every project, branch and version that uses a package.
-- **Jira**: code issues and vulnerabilities become Jira issues, with the Jira status beside each
-  finding.
+- **Jira or Azure Boards**: code issues and vulnerabilities become Jira issues or Azure Boards work
+  items, with their status beside each finding.
 - **Quality gates on new code** for every merge request and pull request, with review comments on
   the changed lines.
 - **Security analysis** with Qualor's own taint rules for JavaScript, TypeScript, Python, Java, Go
@@ -43,8 +44,8 @@ Run the server with Docker in a few minutes: [quick start](https://qualor.dev/do
 - **Your AI agent fixes what Qualor finds**: connect Claude Code, Cursor or any MCP client with one
   URL.
 - **Slack and Microsoft Teams** notifications and a weekly security digest.
-- **Set up in minutes**: pick your GitHub or GitLab repositories, and Qualor opens the pull request
-  that adds the scan to CI.
+- **Set up in minutes**: pick your GitLab, GitHub or Azure DevOps repositories, and Qualor opens
+  the pull request that adds the scan to CI.
 - **Migrate from SonarQube** in one command.
 
 ## Repositories
